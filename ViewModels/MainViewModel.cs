@@ -38,7 +38,14 @@ namespace My_Tasks.ViewModels
                 Items.Remove(s);
             }
         }
-        
-        
+
+        [RelayCommand]
+        async Task Tap(string s)
+        {
+            await Shell.Current.GoToAsync($"{nameof(DetailPage)}?id={s}");
+        }
+
+
+
     }
 }
